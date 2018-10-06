@@ -1,0 +1,82 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[top=2cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{amsmath, amssymb, amsthm, graphicx}
+\usepackage{fancyhdr, enumitem}
+\pagestyle{fancy}
+
+\lhead{\today}
+\chead{Stat 440/640 Homework 1}
+\rhead{Justin Hood}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\begin{document}
+\begin{description}
+\item[2.7]\hfill \\
+We consider the population of gas mileages for the GSX-50, with a normal distribution defined by a mean, $\mu=31.5$ and standard deviation, $\sigma=0.8$
+\begin{enumerate}[label=\alph*.]
+\item $P(30.7\leq y \leq 32.3)=0.6826894809$
+\item $P(29.1\leq y \leq 33.9)=0.9973000656$
+\item $P(29.5\leq y \leq 32.3)=0.8351350606$
+\item $P(31.0\leq y \leq 31.3)=0.1353082579$
+\item $P(y\leq 29.5)=0.0062096799$
+\item $P(y\geq 29.5)=0.9937903201$
+\item $P(y\geq 33.4)=0.0087744625$
+\item $P(y\leq 33.4)=0.9912255375$
+\end{enumerate}
+
+\item[2.8]\hfill \\
+Using the table, we compute as follows:
+\begin{enumerate}[label=\alph*.]
+\item $z_{.05}=1.644853626$
+\item $z_{.02}=2.053748911$
+\item $z_{.01}=2.326347877$
+\item $z_{.005}=2.575829303$
+\end{enumerate}
+
+\item[2.9]\hfill \\
+Using the table, we compute as follows:
+\begin{enumerate}[label=\alph*.]
+\item $t^7_{.05}=1.894578584$
+\item $t^7_{.01}=2.997951566$
+\item $t^7_{.005}=3.499483292$
+\end{enumerate}
+\item[2.10]\hfill
+ \\
+Using the table, we compute as follows:
+\begin{enumerate}[label=\alph*.]
+\item $F^{7,5}_{.05}=4.8759$
+\item $F^{5,2}_{.05}=19.2964$
+\end{enumerate}
+
+\item[2.11]\hfill \\
+Using the table, we compute as follows:
+\begin{enumerate}[label=\alph*.]
+\item $\chi^2_{.05}(3)=7.815$
+\item $\chi^2_{.01}(2)=9.210$
+\end{enumerate}
+
+\item[2.16]\hfill \\
+\begin{enumerate}[label=\alph*.]
+\item Confidence Intervals,
+\begin{enumerate}
+\item $CI_{90}=(56.7,58.9)$
+\item $CI_{95}=(56.489,59.111)$
+\item $CI_{98}=(56.244,59.356)$
+\item $CI_{99}=(56.077,59.523)$
+\end{enumerate}
+\item Yes. Given that 60 feet is greater than the upper bound on the 95\% interval, we may state that we are 95\% confident that the mean is less than 60.
+\item Yes. Given that 60 feet is greater than the upper bound on the 98\% interval, we may state that we are 98\% confident that the mean is less than 60.
+\end{enumerate}
+
+\item[2.17]\hfill \\
+We consider the shampoo problem, with $n=6$, $\bar{y}=15.7665$, $s=.1524$.
+\begin{enumerate}[label=\alph*.]
+\item We shall test $H_0: \mu=16$ vs $H_a:\mu\neq 16$. Computing, we find a value, $p=1.748\times 10^{-4}$. Using the basis of $\alpha=.05$, we note that the process should be readjusted.
+\item Using the test as before and the new basis $\alpha=.01$, we note that the process should still be readjusted.
+\end{enumerate}
+\end{description}
+
+
+\end{document}
