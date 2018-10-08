@@ -1,0 +1,63 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[top=2cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{amsmath, amssymb, amsthm,graphicx}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\pagestyle{fancy}
+
+\lhead{\today}
+\chead{MATH 710 Assignment 3}
+\rhead{Justin Hood}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newtheorem{lem}{Lemma}
+
+\begin{document}
+\begin{description}
+\item[3.3] Salary vs. GPA
+\begin{enumerate}[label=\alph*.]
+\item We consider Figure 3.16. From this figure, we find the regression equation to be,
+\[Y=14.8156+5.70657X\]
+Thus, we see that the relevant coefficients are,
+\begin{align*}
+b_0 &=14.8156\\
+b_1 &=5.70657
+\end{align*}
+This value of $b_0$ is equal to the initial salary value for a student with a GPA of $0$. In this sense, it does not make sense. But, if we assume that this model is only used for students that have passed, i.e. $GPA\neq0$, this begins to make more sense. In this way, we can call $b_0$ a base salary that is then modified by higher GPA's
+\item Using the equation from Figure 3.16, we compute,
+\[Y=14.8156+5.70657*3.25=33.362\]
+Because a GPA of 3.25 is within our experimental region, we note that this prediction of salary is also a point estimate for the  value as well.
+\item We finally compute the Coefficients using the following equations,
+\begin{align*}
+SS_{xy}&=\sum x_iy_i-\frac{\sum x_i\sum y_i}{n}\\
+SS_{xx}&=\sum x_i^2-\frac{(\sum x_i)^2}{n}
+\end{align*}
+Using R, we compute the values to be exactly as proposed in the figure.
+\end{enumerate}
+\item[3.7] Copier Data
+\begin{enumerate}[label=\alph*.]
+\item Using the figure, we identify the model to be,
+\[Y=11.4641+24.6022X\]
+Thus, the relevant coefficients are,
+\begin{align*}
+b_0&=11.4641\\
+b_1&=24.6022
+\end{align*}
+This value of $b_0$ corresponds to the initial amount of time taken to service $0$ copiers. In this sense, this value doesn't make sense. If we make a few assumptions regarding how this job is performed, we can begin to extrapolate more value. For instance if we assume that the fixing of the copiers takes place in one location, we can call this value an amount of time required to set up for working, or aquiring more parts.
+\item Using the equation from Figure 3.18, we compute,
+\[Y=11.4641+24.6022*4=109.8729\]
+Because 4 copiers is within our experimental regfion, we note that this prediction of time is also a point estimate as well.
+\item Finally, we compute the coefficients using the following equations,
+\begin{align*}
+SS_{xy}&=\sum x_iy_i-\frac{\sum x_i\sum y_i}{n}\\
+SS_{xx}&=\sum x_i^2-\frac{(\sum x_i)^2}{n}
+\end{align*}
+Using R, we compute the values to be exactly as proposed in the figure.
+\end{enumerate}
+\item[3.9] Enterprise Industries\\
+Using the scatter plot in Figure 3.19, we begin making some superficial remarks. First, we note that the overall shape of the data is roughly linear. This is a good indicator that a linear model will fit the data well. Next, we consider the nature of the relationship between $y$ and $x_4$. $x_4$ is the difference between the average price of detergent in the market and the cost of Fresh brand detergent. Hence, $x_4>0\Rightarrow$ The average cost is greater than the cost of Fresh, and $x_4<0\Rightarrow$ 
+\end{description}
+\end{document}
