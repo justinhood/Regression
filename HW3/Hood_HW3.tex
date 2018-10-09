@@ -6,7 +6,7 @@
 \pagestyle{fancy}
 
 \lhead{\today}
-\chead{MATH 710 Assignment 3}
+\chead{Regression Assignment 3}
 \rhead{Justin Hood}
 
 \newcommand{\Z}{\mathbb{Z}}
@@ -58,6 +58,73 @@ SS_{xx}&=\sum x_i^2-\frac{(\sum x_i)^2}{n}
 Using R, we compute the values to be exactly as proposed in the figure.
 \end{enumerate}
 \item[3.9] Enterprise Industries\\
-Using the scatter plot in Figure 3.19, we begin making some superficial remarks. First, we note that the overall shape of the data is roughly linear. This is a good indicator that a linear model will fit the data well. Next, we consider the nature of the relationship between $y$ and $x_4$. $x_4$ is the difference between the average price of detergent in the market and the cost of Fresh brand detergent. Hence, $x_4>0\Rightarrow$ The average cost is greater than the cost of Fresh, and $x_4<0\Rightarrow$ 
+Using the scatter plot in Figure 3.19, we begin making some superficial remarks. First, we note that the overall shape of the data is roughly linear. This is a good indicator that a linear model will fit the data well. Next, we consider the nature of the relationship between $y$ and $x_4$. $x_4$ is the difference between the average price of detergent in the market and the cost of Fresh brand detergent. Hence, $x_4>0\Rightarrow$ The average cost is greater than the cost of Fresh, and $x_4<0\Rightarrow$ the averate cost is less than the cost of fresh. So, we may begin to establish a linear relationship between the data. Finally, we note that the data is scattered about the linear trend, which also implies that the data may be described by a least squares regression.
+\item[3.20] MINITAB
+\begin{enumerate}[label=\alph*.]
+\item We shall report a point estimate and a 95\% CI for the mean starting salary for a student with a GPA of 3.25.\\
+To begin, we consider the interval equation,
+\[I=\hat{y}\pm t_{\alpha /2}^{n-2}s\sqrt{Distance}\]
+First, we compte the distance value as,
+\[Distance=\frac{1}{n}+\frac{(x_0-\bar{x})^2}{SS_{xx}}=\frac{1}{7}+\frac{(3.25-3.0814)^2}{1.840686}=.158295\]
+From the Minitab output, we know $s=.536321$ and we know that $t_{.025}^{5}=2.571$ Hence, we arrive at the interval,
+\[I=(32.81339,33.91061)\]
+As reported by Minitab.
+\item We shall now report a point prediction and interval for an individual with a GPA of 3.25. We consider the interval equation for this situation,
+\[I=\hat{y}\pm t_{\alpha /2}^{n-2}s\sqrt{1+Distance}\]
+We note that this equation is nearly identical to the one above, with only the addition of the 1 under the root. Thus, we may compute this interval as above to find,
+\[I=(31.87799,34.84601)\]
+This too agrees with the interval generated in the minitab output.
+\end{enumerate}
+\item[3.21] SAS
+\begin{enumerate}[label=\alph*.]
+\item From the SAS output, we see that the CI generated from the data for 4 copiers being serviced is,
+\[I=(106.7207, 113.0252)\]
+Hence, the company could say that they are 95\% confident that the mean of all times for their employees to service 4 copiers falls within this interval.
+\item Similarly, from the SAS output, we see that the CI generated from the data for fixing four copiers on a single call is,
+\[I=(98.9671,120.7788)\]
+Hence the company could say that they are 95\% confident that for a future call, the amount of time for an employee to fix 4 copiers will fall within this interval.
+\item Judging from the interval computed for the mean time for fixing four copiers, we know that we have predicted the mean to be in the range $(106.7207, 113.0252)$. Allowing for the largest possible amount of time for the service call, the company could reasonably allocate $113$ minutes to make the call for fixing 4 copiers. It is also intersting to note that this value is approximately the time allocated for fixing five copiers less $b_1$, the predicted slope of the linear model.
+\end{enumerate}
+\item[3.35] $\frac{1}{x}$ model\\
+Consider the data from the problem,
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|}
+Time & 8.0 & 4.7 & 3.7 & 2.8 & 8.9 & 5.8 & 2.0 & 1.9 & 3.3 \\\hline
+Experience & 1 & 8 & 4 & 16 & 1 & 2 & 12 & 5 & 3
+\end{tabular}
+\end{center}
+Because our model is related to the values of $\frac{1}{x}$, we will also compute,
+\begin{center}
+\begin{tabular}{c|c|c|c|c|c|c|c|c|c|}
+Time & 8.0 & 4.7 & 3.7 & 2.8 & 8.9 & 5.8 & 2.0 & 1.9 & 3.3 \\\hline
+Experience & 1 & 8 & 4 & 16 & 1 & 2 & 12 & 5 & 3\\\hline
+$\frac{1}{experience}$ & 1 & 0.125 & 0.25 & 0.0625 & 1 & 0.5 & 0.0833 & 0.2 & 0.333
+\end{tabular}
+\end{center}
+Next, we shall compute the linear model using $R$,
+\[\hat{y}=6.3537x+2.0575\]
+Thus, we may compute the point prediction for $x=5\Rightarrow\frac{1}{x}=\frac{1}{5}$,
+\[\hat{y}=\frac{6.3537}{5}+2.0757=3.32824\]
+Next, we begin the computations of our prediction interval using,
+\[I=\hat{y}\pm t_{\alpha /2}^{n-2}s\sqrt{1+Distance}=\hat{y}\pm\Delta\]
+First, we compute $t_{\alpha/2}^{n-2}=t_{.025}^7=2.365$ from the table.\\
+Next, we compute $s$ as,
+\begin{align*}
+s &= \sqrt{\frac{SSE}{n-2}}\\
+&=\sqrt{\frac{\sum y_i^2-\big(b_0\sum y_i+b_1\sum x_iy_i\big)}{7}}\\
+&=\sqrt{\frac{7.41919525}{7}}\\
+&=1.029507
+\end{align*}
+Finally, we compute $Distance$ as,
+\begin{align*}
+Distance &= \frac{1}{n}+\frac{(x_0-\bar{x})^2}{SS_{xx}}\\
+&=\frac{1}{9}+\frac{(.2-.39491)^2}{1.08652}
+&=.14607493
+\end{align*}
+Then
+\[\Delta=2.365*1.029507*\sqrt{1+0.146074}=2.6065558\]
+Thus,
+\[I=(0.7216842,5.934796)\]
+As desired.
 \end{description}
 \end{document}
