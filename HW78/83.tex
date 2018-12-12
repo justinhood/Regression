@@ -1,0 +1,43 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[top=2cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{amsmath, amssymb, amsthm,graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{\today}
+\chead{Regression 8.3 Assignment}
+\rhead{Justin Hood}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newtheorem{lem}{Lemma}
+
+\begin{document}
+\begin{enumerate}
+\item Using Excel, we compute the Holt's trend corrected smoothing on the Thermostat Sales data based on a regression of the first 13 weeks of the data. The following results are what come from our initial analysis:
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+& Value\\\hline
+$\alpha$ & 0.1\\
+$\beta$ & 0.1\\
+SSE & 46329.608\\
+MSE & 926.5921\\
+s & 30.439976\\
+MAD & 27.58347\\
+MAPE & 10.929265\\\hline
+\end{tabular}
+\end{center}
+\item We then use a solver to compute the values of alpha and beta that minimize SSE. These values are computed to be,
+\[\alpha=0.242617,\ \ \beta=0.098163\]
+They result in a value of $SSE=38897.65435$.
+\item We now use the computed values of $l_{52}$ and $b_{52}$ to find the point forecasts for $y_{53},\ y_{54}$ as well as their 90\% intervals.
+\[y_{53}=l_{52}+b_{52}=316.0897+4.54049=320.6302\]
+\[y_{54}=l_{52}+2b_{52}=316.0897+2*4.54049=325.1707\]
+Our intervals are then,
+\[[y_{53}\pm z^*s]=[320.6302-1.645*27.8918,\ 320.6302+1.645*27.8918]=[274.74819,\ 366.5122]\]
+\[[y_{54}\pm z^*s\sqrt{1+\alpha^2(1+\beta)^2}]=[325.1707-1.645*27.8918*1.03488,\ 325.1707-1.645*27.8918*1.03488]=[277.688091,\ 372.65332]\] 
+\end{enumerate}
+\end{document}

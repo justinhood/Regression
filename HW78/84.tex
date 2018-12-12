@@ -1,0 +1,46 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[top=2cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{amsmath, amssymb, amsthm,graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{\today}
+\chead{Regression 8.4 Assignment}
+\rhead{Justin Hood}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newtheorem{lem}{Lemma}
+
+\begin{document}
+\begin{enumerate}
+\item Using Excel, we compute the additive Holt winters Method to the Bike sales data to forecast the future sales of bikes. First, we compute $l_0$, $b_0$, $sn_{-3}$, $sn_{-2}$, $sn_{-1}$, $sn_0$, using the first two years of the data. These values are computed to be,
+\begin{align*}
+l_0 &= 21.25\\
+b_0 &= 0.98088\\
+sn_{-3} &= -14.6162\\
+sn_{-2} &= 6.15294\\
+sn_{-1} &= 18.17206\\
+sn_0 &= -11.308823
+\end{align*}
+\item We now let $\alpha=0.2,\ \beta=0.2,\ \gamma=0.1$. This results in the values of,
+\begin{align*}
+SSE &= 769.0924608\\
+MSE &= 59.16095852\\
+s &= 7.691616
+\end{align*}
+\item We then optimize the values of $\alpha,\ \beta,\ \gamma$ to find the minimum value of $SSE$ This results in,
+\begin{align*}
+\alpha &= 0\\
+\beta &= 0.358\\
+\gamma &= 1
+\end{align*}
+These values produce a $SSE=191.5530$
+\item Finally, we compute the forecast and interval for the sales in the fourth quarter of year 5. First,
+\[y_{20}=l_{16}+4b_{16}+sn_{13}=28.923529\]
+Our interval is then,
+\[\left[y_{20}\pm z^*s\sqrt{1+\sum_{j=1}^3\alpha^2(1+j\gamma)^2}\right]=[21.39987,\ 36.4472]\]
+\end{enumerate}
+\end{document}

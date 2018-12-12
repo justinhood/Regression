@@ -1,0 +1,45 @@
+\documentclass[letterpaper,10pt]{article}
+\usepackage[top=2cm, bottom=1.5cm, left=1cm, right=1cm]{geometry}
+\usepackage{amsmath, amssymb, amsthm,graphicx}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\lhead{\today}
+\chead{Regression Homework 7}
+\rhead{Justin Hood}
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newtheorem{lem}{Lemma}
+
+\begin{document}
+\begin{enumerate}
+\item Find the four seasonal factors for quarters 1,2,3,4.\\\\
+To compute the seasonal factors, we first note that our model takes the form
+\[y_t=TR_t+SN_t+CL_t+IR_t\]
+Using centered moving averages, we may compute our estimate
+\[sn_t+ir_t=y-CMA_t\]
+We then average by season, and normalize the values as,
+\[sn_t=\bar{sn}_t-\bigg(\sum_{t=1}^L\bar{sn}_t/L\bigg)\]
+Our seasonal factors are then computed as
+\begin{align*}
+sn_{q1}&= 70.59375\\
+sn_{q2}&= 210.76042\\
+sn_{q3}&= -76.94792\\
+sn_{q4}&= -204.40625
+\end{align*}
+\item We now predict the values of sales in the next year by the formula $y=tr+sn$ 
+These values are as follows
+\begin{align*}
+t_{17}\Rightarrow Q_1 &= 621.3292\\
+t_{18}\Rightarrow Q_2 &= 781.2515\\
+t_{19}\Rightarrow Q_3 &= 513.2988\\
+t_{20}\Rightarrow Q_4 &= 405.5961
+\end{align*}
+\item Finally, we compute the prediction intervals for the first two quarters using the $B$ value from the text. These intervals are then,
+\[t_{17}:[535.69235,\ 706.96598\]
+\[t_{18}:[695.49893,\ 867.00401]\]
+\end{enumerate}
+\end{document}
